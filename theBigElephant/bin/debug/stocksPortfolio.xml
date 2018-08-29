@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<stocks>
+  <stock>
+	<name>Cisco</name>
+    <symbol>CSCO</symbol>
+  </stock>
+  <stock>
+	<name>Google</name>
+    <symbol>GOOG</symbol>
+  </stock>
+  <stock>
+	<name>Microsoft</name>
+    <symbol>MSFT</symbol>
+  </stock>
+</stocks>

@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilateur Microsoft (R) Visual C#",
+        "version": "1.3.1.0",
+        "fileVersion": "1.3.1.60616",
+        "semanticVersion": "1.3.1",
+        "language": "fr-FR"
+      },
+      "results": [
+        {
+          "ruleId": "S3217",
+          "level": "warning",
+          "message": "Either change the type of 'prop' to 'JToken' or iterate on a generic collection of type 'JProperty'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/marco/OneDrive/Documents/Visual_Studio_2015/Projects/theBigElephant/theBigElephant/Views/StockHistory.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 26,
+                  "endLine": 96,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'row'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/marco/OneDrive/Documents/Visual_Studio_2015/Projects/theBigElephant/theBigElephant/Views/StockHistory.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 21,
+                  "endLine": 82,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S1854": {
+          "id": "S1854",
+          "shortDescription": "Dead stores should be removed",
+          "fullDescription": "A dead store happens when a local variable is assigned a value that is not read by any subsequent instruction. Calculating or retrieving a value only to then overwrite it or throw it away, could indicate a serious error in the code. Even if it's not an error, it is at best a waste of resources. Therefore all calculated values should be used.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1854",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S3217": {
+          "id": "S3217",
+          "shortDescription": "\"Explicit\" conversions of \"foreach\" loops should not be used",
+          "fullDescription": "The foreach statement was introduced in the C# language prior to generics to make it easier to work with the non-generic collections available at that time such as ArrayList. The foreach statements allows you to downcast elements of a collection of Objects to any other type. The problem is that to achieve the cast, the foreach statements silently performs explicit type conversion, which at runtime can result in an InvalidCastException.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3217",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}
