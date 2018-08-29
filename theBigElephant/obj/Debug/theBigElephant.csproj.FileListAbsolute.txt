@@ -1,0 +1,11 @@
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debug\theBigElephant.exe.config
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debug\theBigElephant.exe
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debug\theBigElephant.pdb
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debug\Newtonsoft.Json.dll
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debug\Newtonsoft.Json.xml
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.csprojResolveAssemblyReference.cache
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.Form1.resources
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.Properties.Resources.resources
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.csproj.GenerateResource.Cache
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.exe
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.pdb
