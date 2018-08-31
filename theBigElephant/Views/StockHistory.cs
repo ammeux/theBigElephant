@@ -26,9 +26,6 @@ namespace theBigElephant
         private ProgressBar progBar;
         private String apiAddress;
 
-        private int toTest = 10;
-
-
         public Form1()
         {
             InitializeComponent();
