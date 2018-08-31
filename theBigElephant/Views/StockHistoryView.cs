@@ -16,7 +16,7 @@ using theBigElephant.StockHistory;
 
 namespace theBigElephant
 {
-    public partial class Form1 : Form
+    public partial class StockHistoryView : Form
     {
         private StockLoader stockLoader;
 
@@ -26,7 +26,7 @@ namespace theBigElephant
         private ProgressBar progBar;
         private String apiAddress;
 
-        public Form1()
+        public StockHistoryView()
         {
             InitializeComponent();
 
@@ -81,7 +81,7 @@ namespace theBigElephant
             bool init = true;
             var row = dgv.Rows[0];
             List<Stock> stockList = stockLoader.LoadStocks();
-            foreach(var stock in stockList)
+            foreach (var stock in stockList)
             {
                 DataGridViewColumn col2 = new DataGridViewColumn();
                 col2.HeaderText = stock.Symbol;
@@ -104,7 +104,7 @@ namespace theBigElephant
                     else
                         row = dgv.Rows[i];
                     foreach (var subitem in prop)
-                    {   
+                    {
                         row.Cells[stock.Symbol].Value = subitem["4. close"];
                         progBar.PerformStep();
                     }
