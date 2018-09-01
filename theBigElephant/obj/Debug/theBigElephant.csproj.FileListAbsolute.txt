@@ -18,3 +18,4 @@ C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\bin\Debu
 C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.csprojResolveAssemblyReference.cache
 C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.StockHistoryView.resources
 C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.Form1.resources
+C:\Users\marco\OneDrive\Documents\Epitech\theBigElephant\theBigElephant\obj\Debug\theBigElephant.StockGraphicalView.resources
