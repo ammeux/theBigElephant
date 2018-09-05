@@ -1,15 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<stocks>
-  <stock>
-	<name>Cisco</name>
-    <symbol>CSCO</symbol>
-  </stock>
-  <stock>
-	<name>Google</name>
-    <symbol>GOOG</symbol>
-  </stock>
-  <stock>
-	<name>Microsoft</name>
-    <symbol>MSFT</symbol>
-  </stock>
-</stocks>
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStock xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Stock>
+    <Name>General Electrics</Name>
+    <Symbol>GNE</Symbol>
+  </Stock>
+  <Stock>
+    <Name>Microsoft</Name>
+    <Symbol>MSFT</Symbol>
+  </Stock>
+</ArrayOfStock>

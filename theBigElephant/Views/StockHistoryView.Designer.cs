@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 466);
+            this.ClientSize = new System.Drawing.Size(1400, 466);
             this.Name = "StockHistoryView";
             this.Text = "StockHistoryView";
             this.ResumeLayout(false);

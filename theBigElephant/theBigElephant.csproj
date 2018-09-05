@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StockHistory\StockListUpdater.cs" />
     <Compile Include="Views\StockGraphicalView.cs">
       <SubType>Form</SubType>
     </Compile>
