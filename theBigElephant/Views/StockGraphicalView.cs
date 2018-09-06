@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace theBigElephant
 {
@@ -14,6 +15,7 @@ namespace theBigElephant
     {
 
         private Button loadGraphButton;
+        private MySqlConnection cn = new MySqlConnection();
 
         public StockGraphicalView()
         {
@@ -27,6 +29,7 @@ namespace theBigElephant
             loadGraphButton.Text = "Load graph";
 
             this.Controls.Add(loadGraphButton);
+            cn.ConnectionString = 
         }
 
         private void chart1_Click(object sender, EventArgs e)
