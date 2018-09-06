@@ -37,7 +37,7 @@ namespace theBigElephant
             startStockGraphicalButton.Location = new Point(150, 42);
             startStockGraphicalButton.Size = new System.Drawing.Size(120, 50);
             startStockGraphicalButton.Click += new System.EventHandler(startStockGraphical_Click);
-            startStockGraphicalButton.Text = "Start Stock Graphical";
+            startStockGraphicalButton.Text = "Start Company Graphical";
 
             this.Controls.Add(startStockHistoryButton);
             this.Controls.Add(startStockGraphicalButton);
@@ -51,7 +51,7 @@ namespace theBigElephant
 
         private void startStockGraphical_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(() => Application.Run(new StockGraphicalView()));
+            Thread thread = new Thread(() => Application.Run(new CompanyGraphicalView()));
             thread.Start();
         }
 

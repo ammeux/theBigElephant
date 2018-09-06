@@ -61,13 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conf\Conf.cs" />
+    <Compile Include="Configuration\Config.cs" />
     <Compile Include="StockHistory\StockListUpdater.cs" />
-    <Compile Include="Views\StockGraphicalView.cs">
+    <Compile Include="CompanyGraphical\company.cs" />
+    <Compile Include="Views\CompanyGraphicalView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\StockGraphicalView.Designer.cs">
-      <DependentUpon>StockGraphicalView.cs</DependentUpon>
+    <Compile Include="Views\CompanyGraphicalView.Designer.cs">
+      <DependentUpon>CompanyGraphicalView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StockHistoryView.cs">
       <SubType>Form</SubType>
@@ -89,8 +90,8 @@
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StockGraphicalView.resx">
-      <DependentUpon>StockGraphicalView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CompanyGraphicalView.resx">
+      <DependentUpon>CompanyGraphicalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockHistoryView.resx">
       <DependentUpon>StockHistoryView.cs</DependentUpon>
