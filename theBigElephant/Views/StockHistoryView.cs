@@ -34,6 +34,7 @@ namespace theBigElephant
         private String apiAddress;
         private Stock stockToAddOrRemove;
         private String error;
+        private Configuration.Config configFile = new Configuration.Config();
 
         public StockHistoryView()
         {
@@ -127,7 +128,7 @@ namespace theBigElephant
                 col2.CellTemplate = new DataGridViewTextBoxCell();
                 dgv.Columns.Add(col2);
 
-                apiAddress = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + stock.Symbol + "&apikey=02X9PDG7B8WP2V7C";
+                apiAddress = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + stock.Symbol + "&apikey=" + configFile.APIKEY;
                 var json = new WebClient().DownloadString(apiAddress);
                 var myStock = JObject.Parse(json)["Time Series (Daily)"];
                 int i = 0;

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using theBigElephant.CompanyGraphical;
 
@@ -17,14 +16,12 @@ namespace theBigElephant
     {
 
         private Button loadGraphButton;
+        private ComboBox companiesComboBox;
+        private List<Company> companyList;
 
         System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1;
         System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         System.Windows.Forms.DataVisualization.Charting.Legend legend1;
-
-        private Configuration.Config configFile = new Configuration.Config();
-        private String connString;
-        private List<company> companyList = new List<company>();
 
         public CompanyGraphicalView()
         {
@@ -32,9 +29,28 @@ namespace theBigElephant
 
             this.loadGraphButton = new System.Windows.Forms.Button();
 
+            this.companiesComboBox = new System.Windows.Forms.ComboBox();
+
             this.chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+
+            loadGraphButton.Location = new Point(24, 16);
+            loadGraphButton.Size = new System.Drawing.Size(120, 24);
+            loadGraphButton.Click += new System.EventHandler(loadGraphButton_click);
+            loadGraphButton.Text = "Load graph";
+
+            companiesComboBox.Location = new Point(160, 16);
+            companiesComboBox.Size = new System.Drawing.Size(120, 24);
+            companyList = new getListFromMySql().getCompanyList();
+
+            foreach (Company item in companyList)
+            {
+                if (companiesComboBox.Items.Contains(item.name)){ }
+                else {
+                    companiesComboBox.Items.Add(item.name);
+                }
+            }
 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
@@ -46,24 +62,15 @@ namespace theBigElephant
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
 
-            loadGraphButton.Location = new Point(24, 16);
-            loadGraphButton.Size = new System.Drawing.Size(120, 24);
-            loadGraphButton.Click += new System.EventHandler(loadGraphButton_click);
-            loadGraphButton.Text = "Load graph";
+
 
             this.Controls.Add(loadGraphButton);
+            this.Controls.Add(companiesComboBox);
             this.Controls.Add(chart1);
         }
 
         private void loadGraphButton_click(object sender, EventArgs e)
         {
-            connString = $"Server=localhost;Port=3306;Database=the_big_elephant;user=root;password={configFile.DBPWD}";
-            MySqlConnection conn = new MySqlConnection(connString);
-            MySqlCommand command = conn.CreateCommand();
-            command.CommandText = "SELECT results.net_result, results.net_sales, results.quarter, company.company_name FROM results INNER JOIN company ON results.companyID=company.ID";
-            conn.Open();
-            MySqlDataReader reader = command.ExecuteReader();
-
             chart1.Series.Clear();
             var series1 = new System.Windows.Forms.DataVisualization.Charting.Series()
             {
@@ -106,31 +113,18 @@ namespace theBigElephant
             this.chart1.Series.Add(series3);
             this.chart1.Series.Add(series4);
 
-            while (reader.Read())
-            {
-                companyList.Add(new company()
-                {
-                    name = reader["company_name"].ToString(),
-                    net_result = int.Parse(reader["net_result"].ToString()),
-                    net_sales = int.Parse(reader["net_sales"].ToString())
-                });
-            }
-
             var Result =
                 from a in companyList
-                where a.name == "BNP"
+                where a.name == companiesComboBox.Text
                 select a;
 
             List < string > quarters = new List<string>() { "Q1", "Q2", "Q3", "Q4" };
             int i = 0;
 
-            foreach (company company in Result)
+            foreach (Company company in Result)
             {
                 chart1.Series[quarters[i]].Points.AddXY(company.name, company.net_sales);
-                if (i < 3)
-                    i++;
-                else
-                    i = 0;
+                i++;
             }
         }
     }

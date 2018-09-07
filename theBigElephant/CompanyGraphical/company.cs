@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace theBigElephant.CompanyGraphical
 {
-    class company
+    class Company
     {
         public String name;
         public int net_result;

@@ -61,14 +61,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyGraphical\getListFromMySql.cs" />
+    <Compile Include="CompanyGraphical\MySqlReader.cs" />
     <Compile Include="Configuration\Config.cs" />
     <Compile Include="StockHistory\StockListUpdater.cs" />
-    <Compile Include="CompanyGraphical\company.cs" />
+    <Compile Include="CompanyGraphical\Company.cs" />
     <Compile Include="Views\CompanyGraphicalView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CompanyGraphicalView.Designer.cs">
       <DependentUpon>CompanyGraphicalView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PortfolioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PortfolioView.Designer.cs">
+      <DependentUpon>PortfolioView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StockHistoryView.cs">
       <SubType>Form</SubType>
@@ -92,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CompanyGraphicalView.resx">
       <DependentUpon>CompanyGraphicalView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PortfolioView.resx">
+      <DependentUpon>PortfolioView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockHistoryView.resx">
       <DependentUpon>StockHistoryView.cs</DependentUpon>
