@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Collections.Specialized;
 using theBigElephant.StockHistory;
 using System.Threading;
+using theBigElephant.Views;
 
 namespace theBigElephant
 {
@@ -21,6 +22,7 @@ namespace theBigElephant
     {
         private Button startStockHistoryButton;
         private Button startStockGraphicalButton;
+        private Button startPortfolioButton;
 
         public Form1()
         {
@@ -28,6 +30,7 @@ namespace theBigElephant
 
             this.startStockHistoryButton = new System.Windows.Forms.Button();
             this.startStockGraphicalButton = new System.Windows.Forms.Button();
+            this.startPortfolioButton = new System.Windows.Forms.Button();
 
             startStockHistoryButton.Location = new Point(24, 42);
             startStockHistoryButton.Size = new System.Drawing.Size(120, 50);
@@ -37,10 +40,16 @@ namespace theBigElephant
             startStockGraphicalButton.Location = new Point(150, 42);
             startStockGraphicalButton.Size = new System.Drawing.Size(120, 50);
             startStockGraphicalButton.Click += new System.EventHandler(startStockGraphical_Click);
-            startStockGraphicalButton.Text = "Start Company Graphical";
+            startStockGraphicalButton.Text = "Start Graphical";
+
+            startPortfolioButton.Location = new Point(280, 42);
+            startPortfolioButton.Size = new System.Drawing.Size(120, 50);
+            startPortfolioButton.Click += new System.EventHandler(startPortfolio_Click);
+            startPortfolioButton.Text = "Start Portfolio";
 
             this.Controls.Add(startStockHistoryButton);
             this.Controls.Add(startStockGraphicalButton);
+            this.Controls.Add(startPortfolioButton);
         }
 
         private void startStockHistory_Click(object sender, EventArgs e)
@@ -55,14 +64,20 @@ namespace theBigElephant
             thread.Start();
         }
 
+        private void startPortfolio_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => Application.Run(new PortfolioView()));
+            thread.Start();
+        }
+
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

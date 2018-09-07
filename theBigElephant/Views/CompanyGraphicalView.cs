@@ -42,7 +42,7 @@ namespace theBigElephant
 
             companiesComboBox.Location = new Point(160, 16);
             companiesComboBox.Size = new System.Drawing.Size(120, 24);
-            companyList = new getListFromMySql().getCompanyList();
+            companyList = new GetListFromMySql().getCompanyList();
 
             foreach (Company item in companyList)
             {

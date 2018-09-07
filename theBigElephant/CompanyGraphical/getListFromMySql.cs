@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace theBigElephant.CompanyGraphical
 {
-    class getListFromMySql
+    class GetListFromMySql
     {
         private List<Company> companyList = new List<Company>();
         private MySqlDataReader reader = new MySqlReader().getSqlReader();

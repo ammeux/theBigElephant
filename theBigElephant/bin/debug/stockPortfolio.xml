@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPortfolioStock xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PortfolioStock>
+    <symbol>GOOGL</symbol>
+    <purchaseDate>2018-09-07T11:52:31.4246591+02:00</purchaseDate>
+    <quantity>1000</quantity>
+    <purchasePrice>30</purchasePrice>
+  </PortfolioStock>
+  <PortfolioStock>
+    <symbol>MSFT</symbol>
+    <purchaseDate>2018-09-07T16:26:30.6925215+02:00</purchaseDate>
+    <quantity>500</quantity>
+    <purchasePrice>108.74</purchasePrice>
+  </PortfolioStock>
+</ArrayOfPortfolioStock>

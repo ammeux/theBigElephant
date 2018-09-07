@@ -15,10 +15,10 @@ namespace theBigElephant.StockHistory
         {
             List<Stock> stockList = new List<Stock>();
             var doc = new XmlDocument();
-            if (File.Exists("stocksPortfolio.xml"))
+            if (File.Exists("stockHistory.xml"))
             {
                 var serializer = new XmlSerializer(typeof(List<Stock>));
-                using (var s = File.OpenRead("stocksPortfolio.xml"))
+                using (var s = File.OpenRead("stockHistory.xml"))
                 {
                     stockList = (List<Stock>)serializer.Deserialize(s);
                 }

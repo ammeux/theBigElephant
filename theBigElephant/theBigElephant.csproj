@@ -61,9 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanyGraphical\getListFromMySql.cs" />
+    <Compile Include="CompanyGraphical\GetListFromMySql.cs" />
     <Compile Include="CompanyGraphical\MySqlReader.cs" />
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Portfolio\PortfolioLoader.cs" />
+    <Compile Include="Portfolio\PortfolioStock.cs" />
+    <Compile Include="Portfolio\StockPortfolioUpdater.cs" />
     <Compile Include="StockHistory\StockListUpdater.cs" />
     <Compile Include="CompanyGraphical\Company.cs" />
     <Compile Include="Views\CompanyGraphicalView.cs">

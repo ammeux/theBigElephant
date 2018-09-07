@@ -28,7 +28,7 @@ namespace theBigElephant.StockHistory
             else
                 stockList.Remove(stockToBeRemoved);
             XmlSerializer xs = new XmlSerializer(typeof(List<Stock>));
-            TextWriter tw = new StreamWriter(@"stocksPortfolio.xml");
+            TextWriter tw = new StreamWriter(@"stockHistory.xml");
             xs.Serialize(tw, stockList);
             tw.Close();
         }
