@@ -23,6 +23,7 @@ namespace theBigElephant
         private Button startStockHistoryButton;
         private Button startStockGraphicalButton;
         private Button startPortfolioButton;
+        private Button startEventModuleButton;
 
         public Form1()
         {
@@ -31,6 +32,7 @@ namespace theBigElephant
             this.startStockHistoryButton = new System.Windows.Forms.Button();
             this.startStockGraphicalButton = new System.Windows.Forms.Button();
             this.startPortfolioButton = new System.Windows.Forms.Button();
+            this.startEventModuleButton = new System.Windows.Forms.Button();
 
             startStockHistoryButton.Location = new Point(24, 42);
             startStockHistoryButton.Size = new System.Drawing.Size(120, 50);
@@ -47,9 +49,15 @@ namespace theBigElephant
             startPortfolioButton.Click += new System.EventHandler(startPortfolio_Click);
             startPortfolioButton.Text = "Start Portfolio";
 
+            startEventModuleButton.Location = new Point(410, 42);
+            startEventModuleButton.Size = new Size(120, 50);
+            startEventModuleButton.Click += new System.EventHandler(startEventModule_Click);
+            startEventModuleButton.Text = "Start Event";
+
             this.Controls.Add(startStockHistoryButton);
             this.Controls.Add(startStockGraphicalButton);
             this.Controls.Add(startPortfolioButton);
+            this.Controls.Add(startEventModuleButton);
         }
 
         private void startStockHistory_Click(object sender, EventArgs e)
@@ -67,6 +75,12 @@ namespace theBigElephant
         private void startPortfolio_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(() => Application.Run(new PortfolioView()));
+            thread.Start();
+        }
+
+        private void startEventModule_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => Application.Run(new EventModuleView()));
             thread.Start();
         }
 
