@@ -24,6 +24,7 @@ namespace theBigElephant
         private Button startStockGraphicalButton;
         private Button startPortfolioButton;
         private Button startEventModuleButton;
+        private Button startLinqModuleButton;
 
         public Form1()
         {
@@ -33,6 +34,7 @@ namespace theBigElephant
             this.startStockGraphicalButton = new System.Windows.Forms.Button();
             this.startPortfolioButton = new System.Windows.Forms.Button();
             this.startEventModuleButton = new System.Windows.Forms.Button();
+            this.startLinqModuleButton = new System.Windows.Forms.Button();
 
             startStockHistoryButton.Location = new Point(24, 42);
             startStockHistoryButton.Size = new System.Drawing.Size(120, 50);
@@ -54,10 +56,16 @@ namespace theBigElephant
             startEventModuleButton.Click += new System.EventHandler(startEventModule_Click);
             startEventModuleButton.Text = "Start Event";
 
+            startLinqModuleButton.Location = new Point(540, 42);
+            startLinqModuleButton.Size = new Size(120, 50);
+            startLinqModuleButton.Click += new System.EventHandler(startLinqModule_Click);
+            startLinqModuleButton.Text = "Start LINQ";
+
             this.Controls.Add(startStockHistoryButton);
             this.Controls.Add(startStockGraphicalButton);
             this.Controls.Add(startPortfolioButton);
             this.Controls.Add(startEventModuleButton);
+            this.Controls.Add(startLinqModuleButton);
         }
 
         private void startStockHistory_Click(object sender, EventArgs e)
@@ -81,6 +89,12 @@ namespace theBigElephant
         private void startEventModule_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(() => Application.Run(new EventModuleView()));
+            thread.Start();
+        }
+
+        private void startLinqModule_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => Application.Run(new LinqModuleView()));
             thread.Start();
         }
 
