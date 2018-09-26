@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,9 @@ namespace theBigElephant.Views
         private Button containsButton;
         private Button alphabeticalOrderButton;
         private Button clearButton;
+        private Button xmlToLinqButton;
         private LocalQueries localQueries = new LocalQueries();
+        private XmlToLinq xmlToLinq = new XmlToLinq();
 
 
         public LinqModuleView()
@@ -29,6 +32,7 @@ namespace theBigElephant.Views
             this.containsButton = new Button();
             this.alphabeticalOrderButton = new Button();
             this.clearButton = new Button();
+            this.xmlToLinqButton = new Button();
 
             dgv.Location = new Point(24, 100);
             dgv.Size = new Size(600, 300);
@@ -50,6 +54,11 @@ namespace theBigElephant.Views
             clearButton.Size = new Size(80, 24);
             clearButton.Text = "Clear";
             clearButton.Click += new EventHandler(clearButton_Click);
+
+            xmlToLinqButton.Location = new Point(410, 60);
+            xmlToLinqButton.Size = new Size(80, 24);
+            xmlToLinqButton.Text = "Stocks Xml";
+            xmlToLinqButton.Click += new EventHandler(xmlToLinqButton_Click);
 
             DataGridViewColumn col1 = new DataGridViewColumn();
             col1.HeaderText = "Name";
@@ -74,6 +83,7 @@ namespace theBigElephant.Views
             this.Controls.Add(containsButton);
             this.Controls.Add(alphabeticalOrderButton);
             this.Controls.Add(clearButton);
+            this.Controls.Add(xmlToLinqButton);
         }
 
         private void containsButton_Click(object sender, EventArgs e)
@@ -106,6 +116,18 @@ namespace theBigElephant.Views
                 row.Cells["Price"].Value = stock.Stock_price;
                 row.Cells["Country"].Value = stock.Stock_country;
             }
+        }
+
+        private void xmlToLinqButton_Click(object sender, EventArgs e)
+        {
+            LinqModule.Stock stock = new LinqModule.Stock();
+            stock = xmlToLinq.getStocksFromXml();
+            var row = dgv.Rows[0];
+            int rowIndex = dgv.Rows.Add();
+            row = dgv.Rows[rowIndex];
+            row.Cells["Name"].Value = stock.Stock_name;
+            row.Cells["Price"].Value = stock.Stock_price;
+            row.Cells["Country"].Value = stock.Stock_country;
         }
 
         private void clearButton_Click(object sender, EventArgs e)

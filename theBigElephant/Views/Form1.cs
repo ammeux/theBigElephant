@@ -15,6 +15,7 @@ using System.Collections.Specialized;
 using theBigElephant.StockHistory;
 using System.Threading;
 using theBigElephant.Views;
+using Point = System.Drawing.Point;
 
 namespace theBigElephant
 {
@@ -25,6 +26,7 @@ namespace theBigElephant
         private Button startPortfolioButton;
         private Button startEventModuleButton;
         private Button startLinqModuleButton;
+        private Button startThreadModuleButton;
 
         public Form1()
         {
@@ -35,6 +37,7 @@ namespace theBigElephant
             this.startPortfolioButton = new System.Windows.Forms.Button();
             this.startEventModuleButton = new System.Windows.Forms.Button();
             this.startLinqModuleButton = new System.Windows.Forms.Button();
+            this.startThreadModuleButton = new System.Windows.Forms.Button();
 
             startStockHistoryButton.Location = new Point(24, 42);
             startStockHistoryButton.Size = new System.Drawing.Size(120, 50);
@@ -61,11 +64,17 @@ namespace theBigElephant
             startLinqModuleButton.Click += new System.EventHandler(startLinqModule_Click);
             startLinqModuleButton.Text = "Start LINQ";
 
+            startThreadModuleButton.Location = new Point(670, 42);
+            startThreadModuleButton.Size = new Size(120, 50);
+            startThreadModuleButton.Click += new System.EventHandler(startThreadModule_Click);
+            startThreadModuleButton.Text = "Start Thread";
+
             this.Controls.Add(startStockHistoryButton);
             this.Controls.Add(startStockGraphicalButton);
             this.Controls.Add(startPortfolioButton);
             this.Controls.Add(startEventModuleButton);
             this.Controls.Add(startLinqModuleButton);
+            this.Controls.Add(startThreadModuleButton);
         }
 
         private void startStockHistory_Click(object sender, EventArgs e)
@@ -95,6 +104,12 @@ namespace theBigElephant
         private void startLinqModule_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(() => Application.Run(new LinqModuleView()));
+            thread.Start();
+        }
+
+        private void startThreadModule_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() => Application.Run(new ThreadModuleView()));
             thread.Start();
         }
 
